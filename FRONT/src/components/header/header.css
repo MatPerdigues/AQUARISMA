@@ -1,0 +1,181 @@
+
+#secSuperiorHeader {
+   
+    color: white;
+    font-family: 'Bruno Ace', cursive;
+    height: 50px;
+}
+
+#h1Header{
+    margin-top: 50px;
+ }
+
+ a{
+    color: white;
+ }
+
+
+#secInferior1 {
+    
+    height: 800px;
+    margin-top: 40px;
+}
+
+.encabezado{
+    
+    color: white;
+    height: 50px;
+    width: 215px;
+    position: absolute;
+    left: 500px;
+    margin-top: 0px;
+    
+}
+
+.menuSecInferior{
+    height: 250px;
+    background-color: #111211;
+    
+    width: 1903px;
+    position: absolute;
+    left: 0px;
+        visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center
+    
+}
+ 
+#secInferior1-div1:hover > #secInferior1-div2 {
+    visibility: visible;  
+    height: 250px;
+    opacity: 97%;
+    transition: 1s;  
+    
+}
+
+#secInferior1-div2{
+    position: absolute;
+    left: -500px;
+}
+
+#secInferior2 {
+    
+    position: absolute;
+    top: 138px;
+    left: 340px;
+} 
+
+#secInferior2-div2{
+    
+    height: 250px;
+    background-color: #111211;
+    width: 1903px;
+    position:relative;
+    left: -840px;
+    visibility: hidden;
+    opacity: 0;
+    
+    
+}
+
+#secInferior2-div1:hover > #secInferior2-div2 {
+    visibility: visible;  
+    height: 250px;
+    opacity: 97%;
+    transition: 1s;  
+    
+}
+
+#secInferior3{
+    
+    position: absolute;
+    top: 138px;
+    left: 680px;
+}
+
+#secInferior3-div1{
+    
+    width: 230px;
+}
+
+#secInferior3-div2{
+    
+    height: 250px;
+    background-color: #111211;
+    width: 1903px;
+    position: absolute;
+    left: -1180px;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+#secInferior3-div1:hover > #secInferior3-div2 {
+    visibility: visible;  
+    height: 250px;
+    opacity: 97%;
+    transition: 1s;  
+    
+}
+
+.subMenuSecInferior{
+   
+    height: 250px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.imgSecInferior{
+    
+    width: 300px;
+    height: 150px;
+    margin-top: 0px;
+}
+
+.pSecInferior{
+   
+    font-size: 15px;
+    margin:15px;
+    color: #e6dddc;
+}
+
+#pSecInferior1{
+    position: absolute;
+    left: 310px;
+    
+}
+
+.lineaSecInferior{
+    border: 1px solid #b5b1b0;
+    height: 0.1px;
+    width: 1300px;
+    position: relative;
+    bottom: 50px;
+}
+
+#pSecInferior2 {
+    position: absolute;
+    left: 788px;
+}
+
+
+
+.pLineaInferior{
+    margin-top: 15px;
+    font-style: italic;
+    font-size: smaller;
+}
+
+img {
+    opacity: 100%;
+}
+
+.pHeader:hover{
+    cursor: pointer;
+
+}
+
