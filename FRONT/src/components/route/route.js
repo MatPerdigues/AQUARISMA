@@ -3,6 +3,7 @@ import Home from '../home/home';
 import PaginaAmazonico from '../paginaAmazonico/paginaAmazonico';
 import PaginaOceanico from '../paginaOceanico/paginaOceanico';
 import PaginaDulce from '../paginaDulce/paginaDulce';
+import PaginaPeces from '../paginaPeces/paginaPeces';
 
 export default function Ruteo (){
 
@@ -14,6 +15,7 @@ export default function Ruteo (){
                 <Route path='/ecosistemaAmazonico' element={<PaginaAmazonico/>}></Route>
                 <Route path="/ecosistemaOceanico" element={<PaginaOceanico/>}></Route>
                 <Route path="/ecosistemaDulce" element={<PaginaDulce/>}></Route>
+                <Route path="/peces" element={<PaginaPeces/>}></Route>
 
             </Routes>
         </BrowserRouter>

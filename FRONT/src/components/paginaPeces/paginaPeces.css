@@ -1,0 +1,25 @@
+
+
+#cards-paginaPeces{
+    position: absolute;
+   
+    width:1300px;
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+}
+
+#section-cards-paginaPeces{
+    
+    position: absolute;
+    top:400px;
+    height:fit-content;
+    width: 1900px;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+

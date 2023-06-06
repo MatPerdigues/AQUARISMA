@@ -41,12 +41,14 @@ export default function Header(){
                                         
                                     </div></Link>
                                     
-                                    <div>
+                                    <Link to="/peces"><div>
                                         <div class="imgSecInferior">
                                             <img src={img2} alt='img_escalar'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior2"> Conocé a los protagonistas de este ecosistema </p>
-                                    </div>
+                                    </div></Link>
+
+
                                     <div>
                                         <div class="imgSecInferior">
                                             <img src={img3} alt='img_amazonico'></img>

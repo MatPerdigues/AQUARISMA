@@ -1,0 +1,89 @@
+#img-cards{
+    width: 300px;
+    height: 300px;
+    border: 5px solid white;
+    border-radius: 100%;
+
+    
+}
+
+#div-cards{
+   
+    width: 410px;
+    height: 500px;
+    padding-top: 30px;
+    
+    display: block;
+   
+   
+
+    
+}
+
+#nombre-cards{
+    font-family: 'Bruno Ace', cursive;
+    font-size: 23px;
+    color: grey;
+    padding-top: 10px;
+   
+}
+
+#img-cards:hover {
+    cursor: pointer;
+}
+
+#fondo-blanco{
+   
+    
+    height: 300px;
+    position:absolute;
+    top:0px;
+    width: 409px;
+    
+   
+}
+
+#espacio-imagen{
+    width: 300px;
+    height: 300px;
+    
+    
+    display: flex;
+    justify-content: center;
+    width:100%;
+    
+}
+
+#espacio-blanco{
+    width:100%;
+    
+    width: 305px;
+    height: 305px;
+    position: absolute;
+    top:28px;
+    background-color:#211f24;
+    color: white;
+    border-radius: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#sec-espacio-imagen{
+    
+    width: 300px;
+    margin: auto;
+}
+
+
+#espacio-imagen:hover > #img-cards{
+    
+    filter: blur(10px) grayscale(25%);
+}
+
+#espacio-imagen:hover > #espacio-blanco{
+        visibility: visible;
+        opacity: 70%;
+        transition: 1s;
+}
+
+

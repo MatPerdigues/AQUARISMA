@@ -27,7 +27,7 @@ export default function CuadroImagenes(props){
         </section>
 )};
 
-window.onscroll = function() {
+/* window.onscroll = function() {
     scroll();
 
 };
@@ -39,4 +39,4 @@ function scroll() {
     if(document.documentElement.scrollTop > 1000){
         document.getElementById("divCuadro3").className="slideUp"
     }
-    }    
+    }    */ 

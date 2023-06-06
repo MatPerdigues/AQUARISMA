@@ -67,7 +67,7 @@ const modificarDato = (req,res)=>{
 
         dbConnection.query(`DELETE FROM peces WHERE nombre="${nombrePez}"`,(error,data)=>{
 
-            info=data.json;
+           
             if(error){
                 res.send("La información no ha sido eliminada" + error);
             }else{
