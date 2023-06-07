@@ -36,13 +36,11 @@ const modificarDato = (req,res)=>{
         if(campo=="imagen"){
             const img='http://localhost:3200/public/' + req.file.filename;
 
-            
-            
             dbConnection.query(`UPDATE peces SET imagen="${img}" WHERE nombre="${nombrePez}"`, (error,data)=>{
                 if(error){
                      res.send("La imagen NO ha podido ser actualizada");
                  } else {
-                    res.send("La imagen se ha actualizado correctamente!");
+                    res.send("La imagen se ha actualizado correctamente!" + (img));
                 }
             } 
             

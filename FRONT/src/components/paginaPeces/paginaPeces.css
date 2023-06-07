@@ -1,11 +1,16 @@
 
 
+
 #cards-paginaPeces{
     position: absolute;
-   
+    
     width:1300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 600px;
+
+    
     
     
     
@@ -19,6 +24,9 @@
     width: 1900px;
     display: flex;
     justify-content: center;
+    
+    width:1300px;
+    margin: auto;
     
     
 }

@@ -1,11 +1,46 @@
 #img-cards{
     width: 300px;
     height: 300px;
-    border: 5px solid white;
     border-radius: 100%;
+    border:1px solid violet;
+    margin: auto;
+    color: white;
+       
+}
 
+#imagen-cards{
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    border: 5px solid white;
+}
+
+.p-cards{
+    position: relative;
+    top: -285px;
+}
+
+#img-cards:hover > #imagen-cards {
+    transition:1s;
+    filter: blur(10px) grayscale(50%);
+
+}
+
+#p-cards{
+    visibility: hidden;
+    opacity: 0;
     
 }
+
+#img-cards:hover > #p-cards {
+    transition: 2s;
+    visibility: visible;
+    opacity: 100%;
+    
+}
+
+
+
 
 #div-cards{
    
@@ -14,11 +49,7 @@
     padding-top: 30px;
     
     display: block;
-   
-   
-
-    
-}
+ }
 
 #nombre-cards{
     font-family: 'Bruno Ace', cursive;
@@ -32,58 +63,5 @@
     cursor: pointer;
 }
 
-#fondo-blanco{
-   
-    
-    height: 300px;
-    position:absolute;
-    top:0px;
-    width: 409px;
-    
-   
-}
-
-#espacio-imagen{
-    width: 300px;
-    height: 300px;
-    
-    
-    display: flex;
-    justify-content: center;
-    width:100%;
-    
-}
-
-#espacio-blanco{
-    width:100%;
-    
-    width: 305px;
-    height: 305px;
-    position: absolute;
-    top:28px;
-    background-color:#211f24;
-    color: white;
-    border-radius: 100%;
-    visibility: hidden;
-    opacity: 0;
-}
-
-#sec-espacio-imagen{
-    
-    width: 300px;
-    margin: auto;
-}
-
-
-#espacio-imagen:hover > #img-cards{
-    
-    filter: blur(10px) grayscale(25%);
-}
-
-#espacio-imagen:hover > #espacio-blanco{
-        visibility: visible;
-        opacity: 70%;
-        transition: 1s;
-}
 
 
