@@ -4,40 +4,68 @@ import { Fragment } from "react";
 import Cards from '../cards/cards'
 import './paginaPeces.css';
 import Header from '../header/header'
+import Filter from "../filter/filter";
 
 export default function PaginaPeces(){
 
-    let [datosPeces,setDatosPeces]=useState([]);
-    
 
-    
-    
+    let [arr,setArr]=useState([]);
+
+    let [resultado,setResultado]=useState([]);
+
+   
+
     const traerPeces= async()=>{
         let peces= await fetch('http://localhost:3200/peces')
         .then((res)=>res.json())
-        .then(data=>setDatosPeces(data))
-        .catch(error => console.log("Se ha producido un error... " +error))
+        .then(data=>{setArr(data);setResultado(data)})
+        .catch(error => console.log("Se ha producido un error... " +error));
+            return peces
+        }
 
-        return peces
+    useEffect(()=>{
+
+        traerPeces()
+            
+
+     },[])
+    
+     const filtrar = (event)=>{
+        
+        let datoFiltro=event.target.value;
+        if(event.target.checked){
+            if(datoFiltro==="Amazónico"){
+            let resultado = arr.filter((cat)=> cat.ecosistema === datoFiltro)
+            setResultado(resultado);
+            }
+            if(datoFiltro==="Agua dulce"){
+                let resultado = arr.filter((cat)=> cat.ecosistema === datoFiltro)
+                setResultado(resultado);
+            }
+            if(datoFiltro==="Agua salada"){
+                let resultado = arr.filter((cat)=> cat.ecosistema === datoFiltro)
+                setResultado(resultado);
+            }
+            if(datoFiltro==="No filter"){
+                let resultado = arr;
+                setResultado(resultado);
+            }
+        }       
     }
 
 
-    useEffect(()=>{
-        
-        traerPeces()
-      
-     },[])
-
-      
-    
     return (
         
 
-        <Fragment>
+         <Fragment>
             <Header/>
+            <Filter filtro={filtrar}/>
+
+            
                 <section id="section-cards-paginaPeces">
                     <div id="cards-paginaPeces">
-                        {datosPeces.map((dato)=>{
+                        {resultado.map((dato)=>{
+                            
                             return <Cards key={dato.ID} info={dato}/>
                         })}
                     </div>
@@ -45,9 +73,10 @@ export default function PaginaPeces(){
                         
          </Fragment>
         
-        ) 
-  
+        
+    )
 }
+
 
 
 

@@ -1,0 +1,94 @@
+#btn1{
+    position: absolute;
+    top: 550px;
+    left: 0px;
+    position: fixed;
+ 
+}
+
+
+.btn {
+    background-color: #f0980a;
+    height: 120px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    left: 20px;
+    font-weight: 500;
+    width: 120px;
+    
+
+}
+
+.span-filter{
+    color: black;
+    position: relative;
+    left: -10px;
+    font-size: 20px;
+}
+
+.fish{
+    width: 50px;
+    height: 50px;
+    position: relative;
+
+   
+}
+
+#btn2{
+    position: absolute;
+    top:675px;
+    position: fixed;
+   
+    
+}
+
+#span-filter2{
+    color: black;
+    position: relative;
+    left: 0px;
+    font-size: 20px;
+}   
+
+#btn3{
+    position: absolute;
+    top:800px;
+    position: fixed;
+    
+}
+
+#btn4{
+    
+    top: 425px;
+    
+    position: fixed;
+    
+}
+
+#label4{
+    font-size: 40px;
+}
+#span-filter4{
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    
+    
+    
+}
+
+#icon4{
+    
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+
+

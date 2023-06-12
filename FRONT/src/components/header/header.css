@@ -1,4 +1,9 @@
 
+#headerHome{
+    position: relative;
+    top: -50px;
+}
+
 #secSuperiorHeader {
    
     color: white;
@@ -19,6 +24,8 @@
     
     height: 800px;
     margin-top: 40px;
+    position: absolute;
+    top:40px;
 }
 
 .encabezado{
@@ -63,7 +70,7 @@
 #secInferior2 {
     
     position: absolute;
-    top: 138px;
+    top: 78px;
     left: 340px;
 } 
 
@@ -91,7 +98,7 @@
 #secInferior3{
     
     position: absolute;
-    top: 138px;
+    top: 78px;
     left: 680px;
 }
 
