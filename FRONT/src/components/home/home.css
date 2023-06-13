@@ -1,5 +1,13 @@
-#divHome{
-    background-image:  url(../images/backHome2.jpg);
+#div-home2{
+   
+    height: 800px;
+    background-image:url("./backHome2.jpg");
+}
+
+#header-home{
+    border: 1px solid red;
+    position: relative;
+    top:100px;
 }
 
 

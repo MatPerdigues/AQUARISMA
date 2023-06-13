@@ -8,9 +8,9 @@ import {faFishFins,faOtter,faFilterCircleXmark} from '@fortawesome/free-solid-sv
 
 
 
-export default function Filter ({filtro}){
+export default function Filter ({filtro,}){
 
-    
+   
 
 
     return(

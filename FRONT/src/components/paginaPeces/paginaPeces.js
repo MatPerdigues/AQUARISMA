@@ -9,12 +9,14 @@ import Filter from "../filter/filter";
 export default function PaginaPeces(){
 
 
+
     let [arr,setArr]=useState([]);
+
 
     let [resultado,setResultado]=useState([]);
 
-   
-
+    
+    
     const traerPeces= async()=>{
         let peces= await fetch('http://localhost:3200/peces')
         .then((res)=>res.json())
@@ -23,9 +25,12 @@ export default function PaginaPeces(){
             return peces
         }
 
+
     useEffect(()=>{
 
-        traerPeces()
+        traerPeces();
+       
+
             
 
      },[])

@@ -1,7 +1,7 @@
 
 #headerHome{
     position: relative;
-    top: -50px;
+    top: -5px;
 }
 
 #secSuperiorHeader {
@@ -9,6 +9,7 @@
     color: white;
     font-family: 'Bruno Ace', cursive;
     height: 50px;
+    width: 1894px;
 }
 
 #h1Header{
@@ -43,10 +44,10 @@
     height: 250px;
     background-color: #111211;
     
-    width: 1903px;
+    width: 1894px;
     position: absolute;
     left: 0px;
-        visibility: hidden;
+    visibility: hidden;
     opacity: 0;
     display: flex;
     flex-wrap: wrap;
@@ -78,7 +79,7 @@
     
     height: 250px;
     background-color: #111211;
-    width: 1903px;
+    width: 1894px;
     position:relative;
     left: -840px;
     visibility: hidden;
@@ -111,7 +112,7 @@
     
     height: 250px;
     background-color: #111211;
-    width: 1903px;
+    width: 1894px;
     position: absolute;
     left: -1180px;
     visibility: hidden;
@@ -185,4 +186,104 @@ img {
     cursor: pointer;
 
 }
+
+#btn-login{
+   position:sticky;
+   left: -1800px;
+   top: 0px;
+   color: #ffc107;
+   width: 100px;
+   height: 100px;
+   border-radius: 15px;
+   background-color: transparent;
+   border-color: #ffc107;
+   display: flex;
+
+   /* background-color: #ffc107; */
+}
+
+#btn-login:hover{
+    transition: 0.5s;
+    background-color: #ffc107;
+    color: black;
+}
+
+#icon-login{
+    font-size: 30px;
+    position: relative;
+    left: 30px;
+    top:15px;
+}
+
+#span-login{
+    font-size: 20px;
+    position: relative;
+    right: 20px;
+    top:50px;
+}
+
+#sec-btn-login{
+    position: relative;
+    top: -80px;
+    left: 1700px;
+    
+    display: flex;
+    width: 200px;
+    
+}
+
+#sec-datos-login{
+    
+    width: 400px;
+    height: 460px;
+    margin: auto;
+    background-color: transparent;
+    margin-top: 104px;
+    backdrop-filter: blur(5px) grayscale(30%);
+    border: 1px solid white;
+    border-radius: 20px;
+    z-index: 1;
+    
+}
+
+#input-login1,#input-login2,#titulo-login{
+    margin-top: 50px;
+}
+
+#btn-submit{
+    background-color: #ffc107;
+    font-size: 30px;
+    font-weight: 300px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+#btn-submit1{
+    font-size: 30px;
+    font-weight: 300px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    
+}
+
+#div-btns{
+    
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#form-login{
+    visibility: hidden;
+    
+}
+
+#p-login1{
+    text-decoration: underline;
+}
+
 

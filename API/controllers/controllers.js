@@ -12,11 +12,11 @@ const peces = (req,res)=>{
 }
 
 const agregarDatos=(req,res)=>{
-    const{nombre,ecosistema,PH,temp_min,temp_max}=req.body;
+    const{nombre,ecosistema,PH,temp_min,temp_max,tamano,nombre_cient}=req.body;
 
     const img='http://localhost:3200/public/' + req.file.filename;
 
-    dbConnection.query("INSERT INTO peces (nombre,ecosistema,PH,temp_min,temp_max,imagen) VALUES (?,?,?,?,?,?)",[nombre,ecosistema,PH,temp_min,temp_max,img],(error,data)=>{
+    dbConnection.query("INSERT INTO peces (nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,imagen,tamaño) VALUES (?,?,?,?,?,?,?,?)",[nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,img,tamano],(error,data)=>{
         if(error){
             res.send(error);
         }else{
