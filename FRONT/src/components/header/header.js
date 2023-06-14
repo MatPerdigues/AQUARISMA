@@ -20,7 +20,7 @@ import { useState } from 'react';
 
 export default function Header(){
 
-
+    const[info,setInfo]=useState([]);
     
 
     const mostrar = ()=>{
@@ -32,6 +32,40 @@ export default function Header(){
         
         document.getElementById('form-login').style.visibility='hidden';
     }
+
+    const login= async(event)=>{
+        event.preventDefault();
+        const form =JSON.stringify({
+            "user":event.target[0].value,
+            "password":event.target[1].value,
+
+        })
+        
+        const response= await fetch('http://localhost:3200/login',{
+            method:'POST',
+            body: form,
+            headers:{
+                
+                'Content-Type':'application/json'
+            }
+            
+        })
+
+        .then((res)=>res.json())
+        .then((data)=>setInfo(data))
+
+       /*  if(response.ok){
+            let info=response.json()
+            console.log(info)
+        }else{
+            console.log("NO se encontró el usuario")
+        }
+
+        console.log(response); */
+
+    } 
+
+    console.log(info)  
 
     return(
         <Fragment>
@@ -53,23 +87,23 @@ export default function Header(){
                                 </button>
                             </section>
                             
-                            <form id='form-login'>
+                            <form id='form-login'method='POST' onSubmit={(event)=>{login(event)}}>
                                     <section id='sec-datos-login'>
                                         <h4 id='titulo-login'>Ingresá tus datos</h4>
                                         <div>
 
                                             <div class="input-group mb-3" id='input-login1'>
                                                 <span class="input-group-text" id="inputGroup-sizing-default"><FontAwesomeIcon icon={faUser}/></span>
-                                                <input type="text" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='Nombre de usuario...'/>
+                                                <input type="text" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='Nombre de usuario...' name="user"/>
                                             </div>
 
                                             <div class="input-group mb-3" id='input-login2'>
                                                 <span class="input-group-text" id="inputGroup-sizing-default"><FontAwesomeIcon icon={faKey}/></span>
-                                                <input type="password" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='Contraseña...'/>
+                                                <input type="password" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='Contraseña...' name='password'/>
                                             </div>
                                         </div>
                                         <div id='div-btns'>
-                                            <button onClick={ocultar} id='btn-submit1'><FontAwesomeIcon icon={faXmark} /></button>
+                                            <button type='button' onClick={ocultar} id='btn-submit1'><FontAwesomeIcon icon={faXmark} /></button>
                                             <button type="submit" id='btn-submit'><FontAwesomeIcon icon={faCheck} /></button>
                                         </div>
                                         <div id='div-p-login'>

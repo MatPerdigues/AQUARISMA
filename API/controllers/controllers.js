@@ -1,4 +1,8 @@
 const dbConnection = require('../config/dataBase');
+const bcrypt=require('bcrypt');
+const jwt=require('jsonwebtoken');
+const PASS_SEGURA = process.env.PASS_SEGURA;
+
 
 
 const peces = (req,res)=>{
@@ -75,8 +79,59 @@ const modificarDato = (req,res)=>{
          } 
         )
     };
+
+    const registrarAdmin=async (req,res)=>{
+        const {user,password}=req.body;
     
+        const passEncriptada= await bcrypt.hash(password,10); 
+    
+        dbConnection.query('INSERT INTO admins (usuario,password) VALUES(?,?)',[user,passEncriptada],(error,data)=>{
+            if(error){
+                res.send(error);
+            }else{
+                res.send("Administrador registrado correctamente")
+            }
+        }
+        )
+    }
+
+    
+    const login = (req,res)=>{
+        const{user,password}=req.body;
+    
+        dbConnection.query("SELECT * FROM admins WHERE usuario=?",[user],async(error,data)=>{
+            if(error){
+                res.send("Error en el servidor " + error)
+            }else{
+                if(data.length==0){
+                    res.json("No se encontró el usuario!!!");
+                }else{
+    
+                
+                
+                let info=data[0];
+                const passOk=await bcrypt.compare(password,info.password)
+                
+                if(passOk){
+                    
+                    jwt.sign({user},PASS_SEGURA,{expiresIn:'10m'},(error,token)=>{
+                        if(error){
+                            res.send(error)
+                        }else{
+                            res.json({
+                                mensaje:`Usuario ${user} logeado!`,
+                                tokenLogIn:token
+                            })
+                        }
+                    })
+                }else{
+                    res.json({mensaje:"Contraseña incorrecta"})
+                }
+            }
+            }
+        })
+    }
 
 
 
-module.exports={peces,agregarDatos,modificarDato,eliminarDato};
+module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login};
