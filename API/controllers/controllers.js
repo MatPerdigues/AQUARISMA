@@ -104,7 +104,7 @@ const modificarDato = (req,res)=>{
                 res.send("Error en el servidor " + error)
             }else{
                 if(data.length==0){
-                    res.json("No se encontró el usuario!!!");
+                    res.json("Usuario no registrado");
                 }else{
     
                 
@@ -118,14 +118,15 @@ const modificarDato = (req,res)=>{
                         if(error){
                             res.send(error)
                         }else{
-                            res.json({
-                                mensaje:`Usuario ${user} logeado!`,
-                                tokenLogIn:token
-                            })
+                            res.json(`Usuario logeado!`)
+
+                               /*  {mensaje:`Usuario ${user} logeado!`,
+                                tokenLogIn:token} */
+                            
                         }
                     })
                 }else{
-                    res.json({mensaje:"Contraseña incorrecta"})
+                    res.json("Contraseña incorrecta")
                 }
             }
             }

@@ -20,17 +20,20 @@ import { useState } from 'react';
 
 export default function Header(){
 
+    let dato = "";
+
     const[info,setInfo]=useState([]);
     
 
     const mostrar = ()=>{
         
-        document.getElementById('form-login').style.visibility='visible';
+        document.getElementById('sec-datos-login').style.display='block'; 
+        
     }
 
     const ocultar = ()=>{
         
-        document.getElementById('form-login').style.visibility='hidden';
+        document.getElementById('sec-datos-login').style.display='none';
     }
 
     const login= async(event)=>{
@@ -52,20 +55,32 @@ export default function Header(){
         })
 
         .then((res)=>res.json())
-        .then((data)=>setInfo(data))
+        .then((data)=>{setInfo(data);dato=data})
+        
 
-       /*  if(response.ok){
-            let info=response.json()
-            console.log(info)
+        
+
+
+       
+
+        
+        if(dato === `Usuario logeado!`){
+            console.log("redireccionando!!")
+            window.location.href='../admin';
+
         }else{
-            console.log("NO se encontró el usuario")
+            alert(dato)
         }
-
-        console.log(response); */
-
+        
+        
+    
     } 
 
-    console.log(info)  
+    console.log(info);
+
+
+
+     
 
     return(
         <Fragment>
@@ -104,7 +119,7 @@ export default function Header(){
                                         </div>
                                         <div id='div-btns'>
                                             <button type='button' onClick={ocultar} id='btn-submit1'><FontAwesomeIcon icon={faXmark} /></button>
-                                            <button type="submit" id='btn-submit'><FontAwesomeIcon icon={faCheck} /></button>
+                                            <button type="submit" id='btn-submit'><FontAwesomeIcon icon={faCheck}/></button>
                                         </div>
                                         <div id='div-p-login'>
                                             <p id='p-login1'>Testing</p>
@@ -128,7 +143,7 @@ export default function Header(){
                                         <div class="imgSecInferior">
                                             <img src={img1} alt='img_Amazona'></img>
                                         </div>
-                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran a nuestros acuarios</p> 
+                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran nuestros acuarios</p> 
                                         
                                     </div></Link>
                                     
@@ -173,7 +188,7 @@ export default function Header(){
                                         <div class="imgSecInferior">
                                             <img src={img4} alt='img_coral'></img>
                                         </div>
-                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran a nuestros acuarios</p> 
+                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran nuestros acuarios</p> 
                                         
                                     </div></Link>
                                     
@@ -212,7 +227,7 @@ export default function Header(){
                                         <div class="imgSecInferior">
                                             <img src={img7} alt='img_lago'></img>
                                         </div>
-                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran a nuestros acuarios</p> 
+                                        <p class="pSecInferior" id="pSecInferior1">Visitá los ecosistemas que inspiran nuestros acuarios</p> 
                                         
                                     </div></Link>
                                     

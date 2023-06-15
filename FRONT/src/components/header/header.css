@@ -242,7 +242,11 @@ img {
     backdrop-filter: blur(5px) grayscale(30%);
     border: 1px solid white;
     border-radius: 20px;
-    z-index: 1;
+    display: none;
+    z-index: 2;
+
+    
+    
     
 }
 
@@ -277,10 +281,7 @@ img {
 
 }
 
-#form-login{
-    visibility: hidden;
-    
-}
+
 
 #p-login1{
     text-decoration: underline;
