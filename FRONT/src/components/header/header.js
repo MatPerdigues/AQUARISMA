@@ -57,13 +57,6 @@ export default function Header(){
         .then((res)=>res.json())
         .then((data)=>{setInfo(data);dato=data})
         
-
-        
-
-
-       
-
-        
         if(dato === `Usuario logeado!`){
             console.log("redireccionando!!")
             window.location.href='../admin';
@@ -71,17 +64,11 @@ export default function Header(){
         }else{
             alert(dato)
         }
-        
-        
-    
-    } 
+     } 
 
     console.log(info);
-
-
-
-     
-
+    
+    
     return(
         <Fragment>
 

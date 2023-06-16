@@ -1,0 +1,138 @@
+#sec-btn-admin{
+    
+    position: absolute;
+    top:300px;
+    z-index: -1;
+    width:1300px;
+    margin: auto 310px;
+    
+    display:flex;
+    justify-content: space-around;
+
+}
+
+#btn-admin{
+    margin: 0px;
+    left: -1800px;
+    top: 0px;
+    color: #f58505;
+    width: 105px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: transparent;
+    border-color: #f58505;
+    display: flex;
+}
+
+#btn-admin:hover{
+    transition: 0.5s;
+    background-color: #f58505;
+    color: black;
+}
+
+
+#span-admin{
+    font-size: 20px;
+    position: relative;
+    right: 15px;
+    top:50px;
+}
+
+#span-admin3{
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+    top:50px;
+}
+
+#span-admin4{
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+    top:50px;
+}
+
+
+#span-admin5{
+    font-size: 20px;
+    position: relative;
+    right: 20px;
+    top:50px;
+    
+}
+
+#form-info{
+    width: 900px;
+    height: 300px;
+    margin: auto;
+    background-color: transparent;
+    margin-top: 350px;
+    backdrop-filter: blur(5px) grayscale(30%);
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+    display: block;
+    z-index: 2;
+    
+    }
+
+.titulo-form-admin{
+    color: white;
+    font-size: 16px;
+    font-family:'Bruno Ace', cursive;
+    margin-top: 20px;
+    width: 900px;
+    
+}
+
+#inputGroupSelect04{
+    margin-bottom: 15px;
+}
+
+#span-select{
+    height: 38px;
+}
+
+.mb-3{
+   
+    display: flex;
+    
+}
+
+#sec1-form-info{
+ 
+    width:400px;
+    position: absolute;
+    left: 30px;
+    top: 0px;
+}
+
+#sec2-form-info{
+ 
+    width:400px;
+    position: absolute;
+    right: 30px;
+    top:60px;
+}
+
+#file-form-info{
+    height: 38px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+}
+
+#formFile{
+    width: 320px;
+    position: relative;
+    
+}
+
+#label-formFile{
+    width:80px;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    
+}

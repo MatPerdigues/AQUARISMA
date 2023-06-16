@@ -25,7 +25,7 @@ const agregarDatos=(req,res)=>{
             res.send(error);
         }else{
                   
-            res.redirect('/peces');
+            res.jason('Datos cargados correctamente!');
             
         }
     })
