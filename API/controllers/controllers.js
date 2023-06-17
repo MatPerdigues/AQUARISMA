@@ -18,14 +18,14 @@ const peces = (req,res)=>{
 const agregarDatos=(req,res)=>{
     const{nombre,ecosistema,PH,temp_min,temp_max,tamano,nombre_cient}=req.body;
 
-    const img='http://localhost:3200/public/' + req.file.filename;
+   const img='http://localhost:3200/public/' + req.file.filename;
 
-    dbConnection.query("INSERT INTO peces (nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,imagen,tamaño) VALUES (?,?,?,?,?,?,?,?)",[nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,img,tamano],(error,data)=>{
+    dbConnection.query("INSERT INTO peces (nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,tamaño,imagen) VALUES (?,?,?,?,?,?,?,?)",[nombre,nombre_cient,ecosistema,PH,temp_min,temp_max,tamano,img],(error,data)=>{
         if(error){
             res.send(error);
         }else{
                   
-            res.jason('Datos cargados correctamente!');
+            res.json(`Datos cargados correctamente!`);
             
         }
     })
@@ -89,7 +89,7 @@ const modificarDato = (req,res)=>{
             if(error){
                 res.send(error);
             }else{
-                res.send("Administrador registrado correctamente")
+                res.json("Administrador registrado correctamente")
             }
         }
         )

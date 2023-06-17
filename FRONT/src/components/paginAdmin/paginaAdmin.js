@@ -1,49 +1,82 @@
 import './paginaAdmin.css';
 import Header from '../header/header';
-import { Fragment } from 'react';
+import { Fragment} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSquarePlus,faTrashCan,faPenToSquare,faUserPlus,faUserMinus,faUser,faKey,faXmark,faCheck} from '@fortawesome/free-solid-svg-icons'
-
-
-let dato=""
-
-const agrgarInfo = async(event)=>{
-    event.preventDefault();
-    const form=JSON.stringify({
-        "nombre":event.target[0].value,
-        "nombre_cient":event.target[1].value,
-        "ecosistema":event.target[2].value,
-        "PH":event.target[3].value,
-        "tamano":event.target[4].value,
-        "temp_min":event.target[5].value,
-        "temp_max":event.target[6].value,
-        
-    })
-
-    const response= await fetch('http://localhost:3200/agregarDatos',{
-            method:'POST',
-            body: form,
-            headers:{
-                
-                'Content-Type':'application/json'
-            }
-            
-        })
-
-        .then((res)=>res.json())
-        .then((data)=>{dato=data})
-}
+import {faSquarePlus,faTrashCan,faPenToSquare,faUserPlus,faUserMinus,faXmark,faCheck} from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react';
 
 
 
 
 export default function PaginaAdmin() {
+
+
+    const[img,setImg]=useState(null)
+
+    let dato=""
+
+    const handleChange=(event)=>{
+        setImg(event.target.files[0]);
+        
+
+    }
+
+    console.log(img);
+ 
+    const agrgarInfo = async(event)=>{
+        event.preventDefault();
+        
+        const form = new FormData();
+        form.append('imagen',img);
+        form.append("nombre",event.target[0].value);
+        form.append("nombre_cient",event.target[1].value);
+        form.append("ecosistema",event.target[2].value);
+        form.append("PH",event.target[3].value);
+        form.append("tamano",event.target[4].value);
+        form.append("temp_min",event.target[5].value);
+        form.append("temp_max",event.target[6].value);
+        
+
+
+        const response= await fetch('http://localhost:3200/agregarDatos',{
+                method:'POST',
+                body: form,
+                         
+            })
+
+            .then((res)=>res.json())
+            .then((data)=>{dato=data})
+
+            console.log(dato);
+            alert(dato);
+
+            document.getElementById("form-info").reset();
+        
+        } 
+        
+        
+        const ocultar= event=>{
+        
+        if( event.currentTarget.id==="btn-cerrar-info"){
+            document.getElementById("form-info").style.display="none";
+        }
+        
+    }
+
+    const mostrar=event=>{
+        if(event.currentTarget.id==="btn-admin"){
+            document.getElementById("form-info").style.display="block";
+        }
+        
+    }
+    
+    
     return(
         <Fragment>
 
             <Header/>
             <section id="sec-btn-admin">
-                <button type="button" id='btn-admin' >
+                <button type="button" id='btn-admin' onClick={mostrar}>
                     <FontAwesomeIcon icon={faSquarePlus} id='icon-login'/>
                     <span id='span-admin'>+ info</span>
                 </button>
@@ -80,11 +113,11 @@ export default function PaginaAdmin() {
                     <div class="input-group">
                     <span class="input-group-text" id='span-select'></span>
     
-                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
                             <option selected>Ecosistema...</option>
-                            <option value="1">Amazónico</option>
-                            <option value="2">Agua dulce</option>
-                            <option value="3">Agua salada</option>
+                            <option value="Amazónico">Amazónico</option>
+                            <option value="Agua dulce">Agua dulce</option>
+                            <option value="Agua salada">Agua salada</option>
                         </select>
                         
                     </div>
@@ -112,9 +145,13 @@ export default function PaginaAdmin() {
                     </div>
                     <div class="mb-3" id='file-form-info'>
                         <label for="formFile" class="form-label" id='label-formFile'>Imagen</label>
-                        <input class="form-control" type="file" id="formFile"/>
+                        <input class="form-control" type="file" id="formFile" name='imagen' onChange={handleChange}/>
                     </div>
                 </section>
+                <div id='div-btns-info'>
+                    <button type='button' id='btn-cerrar-info' onClick={ocultar}><FontAwesomeIcon icon={faXmark}/></button>
+                    <button type="submit" id='btn-submit'><FontAwesomeIcon icon={faCheck} onClick={ocultar}/></button>
+                </div>
             </form>
     
         </Fragment> 
