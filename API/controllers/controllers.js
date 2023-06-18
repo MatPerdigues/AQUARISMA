@@ -64,6 +64,20 @@ const modificarDato = (req,res)=>{
         )};
     }
 
+    const busquedaXnombre=(req,res)=>{
+        const{nombrePez}=req.body;
+
+        dbConnection.query(`SELECT * FROM peces WHERE nombre="${nombrePez}"`,(error,data)=>{
+            if(error){
+                res.send(error)
+            }
+            else{
+                res.send(data);
+            }    
+        })
+
+    }
+
     const eliminarDato=(req,res)=>{
         const{nombrePez}=req.body;
 
@@ -71,10 +85,10 @@ const modificarDato = (req,res)=>{
 
            
             if(error){
-                res.send("La información no ha sido eliminada" + error);
+                res.json("La información no ha sido eliminada, intentá nuevamente" + error);
             }else{
-                console.log("La información se ha eliminado correctamente");
-                res.redirect('/peces');
+                res.json("La información se ha eliminado correctamente!");
+                
             }
          } 
         )
@@ -135,4 +149,4 @@ const modificarDato = (req,res)=>{
 
 
 
-module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login};
+module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login,busquedaXnombre};

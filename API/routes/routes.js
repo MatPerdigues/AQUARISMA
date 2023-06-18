@@ -2,9 +2,11 @@ const express=require('express');
 const router=express.Router();
 const upload=require('../multer/multer') 
 
-const {peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login} = require('../controllers/controllers')
+const {peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login, busquedaXnombre} = require('../controllers/controllers')
 
 router.get('/peces',peces);
+
+router.post('/busquedaXnombre',busquedaXnombre);
 
 router.post('/agregarDatos',upload.single('imagen'),agregarDatos);
 

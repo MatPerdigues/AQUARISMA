@@ -11,7 +11,7 @@
 
 }
 
-#btn-admin{
+.btn-admin{
     margin: 0px;
     left: -1800px;
     top: 0px;
@@ -24,7 +24,7 @@
     display: flex;
 }
 
-#btn-admin:hover{
+.btn-admin:hover{
     transition: 0.5s;
     background-color: #f58505;
     color: black;
@@ -61,7 +61,7 @@
     
 }
 
-#form-info{
+.form-admin{
     width: 900px;
     height: 350px;
     margin: auto;
@@ -137,7 +137,7 @@
     
 }
 
-#div-btns-info{
+.div-btns-info{
     position: relative;
     top:250px;
     
@@ -146,11 +146,78 @@
     margin-left: 40px;
 }
 
-#btn-cerrar-info{
+.btn-cerrar-info{
     font-size: 30px;
     font-weight: 300px;
     border-radius: 10px;
     width: 50px;
     height: 50px;
     margin-top: 30px;
+}
+
+#form-buscar-info{
+    display: none;
+    width: 350px;
+    height: 350px;
+    
+}
+
+#p-borrar-info{
+    position: relative;
+    margin-top: 80px;
+   
+    width: 350px;
+    top: -50px;
+}
+
+#div-btns-info1{
+    
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-submit{
+    background-color: #f58505;
+    font-size: 30px;
+    font-weight: 300px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+#sec-borrar-info{
+    display: block;
+    color: white;
+    font-family:'Bruno Ace', cursive;
+    display: none;
+    border: none;
+    
+    
+
+}
+
+#img-borrar{
+    border: 1px solid red;
+    width:300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#div-btns-info2{
+    position: relative;
+    top: -150px;
+}
+
+
+#sec-borrar-card{
+    
+    position: relative;
+    right: -250px;
+}
+
+#text-borrar-card{
+    border: 1px solid green;
 }
