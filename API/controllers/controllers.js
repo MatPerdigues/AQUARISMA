@@ -42,9 +42,9 @@ const modificarDato = (req,res)=>{
 
             dbConnection.query(`UPDATE peces SET imagen="${img}" WHERE nombre="${nombrePez}"`, (error,data)=>{
                 if(error){
-                     res.send("La imagen NO ha podido ser actualizada");
+                     res.jon("La imagen NO ha podido ser actualizada");
                  } else {
-                    res.send("La imagen se ha actualizado correctamente!" + (img));
+                    res.json("La imagen se ha actualizado correctamente!" + (img));
                 }
             } 
             
@@ -55,9 +55,9 @@ const modificarDato = (req,res)=>{
 
             dbConnection.query(`UPDATE peces SET ${campo}="${nuevoDato}" WHERE nombre="${nombrePez}"`, (error,data)=>{
                 if(error){
-                    res.send("Los datos no han podido actualizarse " + error);
+                    res.json("Los datos no han podido actualizarse " + error);
                 } else {
-                    res.send("Los datos se han actualizado correctamente!");
+                    res.json("Los datos se han actualizado correctamente!");
                 }
         } 
         
@@ -94,20 +94,61 @@ const modificarDato = (req,res)=>{
         )
     };
 
-    const registrarAdmin=async (req,res)=>{
+    const registrarAdmin= async (req,res)=>{
         const {user,password}=req.body;
-    
-        const passEncriptada= await bcrypt.hash(password,10); 
-    
-        dbConnection.query('INSERT INTO admins (usuario,password) VALUES(?,?)',[user,passEncriptada],(error,data)=>{
+        const passEncriptada= await bcrypt.hash(password,10);
+
+        dbConnection.query(`SELECT * FROM admins WHERE usuario="${user}"`,(error,data)=>{
             if(error){
                 res.send(error);
             }else{
-                res.json("Administrador registrado correctamente")
+                if(data.length>0){
+                    res.json("Ya existe un Admin con ese usuario")
+                }else{
+                     
+    
+                    dbConnection.query('INSERT INTO admins (usuario,password) VALUES(?,?)',[user,passEncriptada],(error,data)=>{
+                        if(error){
+                            res.send(error);
+                        }else{
+                            res.json("Administrador registrado correctamente")
+                        }
+                    }
+                    )
+                }
             }
-        }
-        )
+        })
+     }
+
+     
+
+     const buscarAdmin = (req,res)=>{
+        const {usuario}=req.body;
+        dbConnection.query(`SELECT * FROM admins WHERE usuario="${usuario}"`,(error,data)=>{
+            if(error){
+                res.send(error);
+
+            }else{
+                if(data.length===0){
+                    res.json("Admin no registrado")
+                }else{
+                    res.send(data);
+                }
+            }
+        })
+     }
+
+    const borrarAdmin = (req,res)=>{
+        const{usuario}=req.body;
+        dbConnection.query(`DELETE FROM admins WHERE usuario="${usuario}"`,(error,data)=>{
+            if(error){
+                res.send(error)
+            }else{
+                res.json(`El Admin ${usuario} se ha eliminado correctamente!`);
+            }
+        })
     }
+
 
     
     const login = (req,res)=>{
@@ -149,4 +190,4 @@ const modificarDato = (req,res)=>{
 
 
 
-module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login,busquedaXnombre};
+module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login,busquedaXnombre,buscarAdmin,borrarAdmin};

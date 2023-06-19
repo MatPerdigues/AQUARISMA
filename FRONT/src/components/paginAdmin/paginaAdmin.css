@@ -221,3 +221,69 @@
 #text-borrar-card{
     border: 1px solid green;
 }
+
+#span-borrar-info{
+    font-size: 20px;
+}
+
+#btn-submit0{
+    background-color: #f58505;
+}
+
+#form-editar-info{
+    display: block;
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+
+#p-editar-info{
+    
+    width: 400px;
+}
+
+#div-btns-info4{
+    position: relative;
+    top: -35px;
+}
+
+#select-ecosistema-editar,#span-ecosistema-editar{
+    margin-bottom:15px;
+    margin-top: 0px;
+    display: none;
+}
+
+#file-form-actualizar{
+    background-color: white;
+    display: none;
+}
+
+#form-sumarAdmin{
+    display: block;
+    width: 400px;
+    height: 450px;
+    display: none;
+}
+
+#p-sumarAdmin{
+    width:400px;
+}
+
+#form-borrarAdmin{
+    display: none;
+    width: 350px;
+}
+
+#p-borrarAdmin{
+    
+    width: 350px;
+    margin-bottom: 50px;
+
+}
+
+#sec-borrarAdmin{
+    display: none;
+    color: white;
+    width:350px;
+
+}
