@@ -6,14 +6,11 @@ import {faSquarePlus,faTrashCan,faPenToSquare,faUserPlus,faUserMinus,faXmark,faC
 import { useState } from 'react';
 
 
-
-
-
-
-
-
-
 export default function PaginaAdmin() {
+
+
+
+
 
     const[busqueda,SetBusqueda]=useState(['']);
     const[img,setImg]=useState(null);
@@ -41,7 +38,6 @@ export default function PaginaAdmin() {
 
     
 
-    console.log(imgUpdate)
 
     
     
@@ -91,7 +87,8 @@ export default function PaginaAdmin() {
             body:formDelete,
             headers:{
                 
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             }
         })
 
@@ -127,6 +124,9 @@ export default function PaginaAdmin() {
     const response= await fetch('http://localhost:3200/agregarDatos',{
         method:'POST',
         body: form,
+        headers:{
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
                      
         })
         .then((res)=>res.json())
@@ -151,7 +151,10 @@ export default function PaginaAdmin() {
         
         const response= await fetch('http://localhost:3200/modificarDato',{
         method:"PUT",
-        body:formUpdate
+        body:formUpdate,
+        headers:{
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
     })
         .then((res)=>res.json())
         .then((data)=> infoUpdate=data)
@@ -178,6 +181,7 @@ export default function PaginaAdmin() {
             method:"POST",
             body:formSumarAdmin,
             headers:{
+                "Authorization": `Bearer ${localStorage.getItem("token")}`,
                 
                 'Content-Type':'application/json'
             }})
@@ -214,7 +218,7 @@ export default function PaginaAdmin() {
             method:"POST",
             body:formBusquedaAdmin,
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
             }
 
         })
@@ -231,6 +235,8 @@ export default function PaginaAdmin() {
         }
     }
 
+    
+
 
     const borrarAdmin = async(event)=>{
         event.preventDefault();
@@ -242,7 +248,9 @@ export default function PaginaAdmin() {
             method:"DELETE",
             body:form,
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+              
             }
         })
 
@@ -251,6 +259,8 @@ export default function PaginaAdmin() {
 
         alert(infoBorrarAdmin)
         document.getElementById("sec-borrarAdmin").style.display="none";
+
+       
 
     }
     

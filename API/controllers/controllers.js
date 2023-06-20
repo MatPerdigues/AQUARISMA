@@ -141,11 +141,14 @@ const modificarDato = (req,res)=>{
     const borrarAdmin = (req,res)=>{
         const{usuario}=req.body;
         dbConnection.query(`DELETE FROM admins WHERE usuario="${usuario}"`,(error,data)=>{
-            if(error){
-                res.send(error)
+
+           
+ 
+             if(error){
+                res.send("Hubo un error" + error)
             }else{
                 res.json(`El Admin ${usuario} se ha eliminado correctamente!`);
-            }
+            } 
         })
     }
 
@@ -153,7 +156,7 @@ const modificarDato = (req,res)=>{
     
     const login = (req,res)=>{
         const{user,password}=req.body;
-    
+        
         dbConnection.query("SELECT * FROM admins WHERE usuario=?",[user],async(error,data)=>{
             if(error){
                 res.send("Error en el servidor " + error)
@@ -170,14 +173,17 @@ const modificarDato = (req,res)=>{
                 if(passOk){
                     
                     jwt.sign({user},PASS_SEGURA,{expiresIn:'10m'},(error,token)=>{
+                      
+ 
                         if(error){
                             res.send(error)
-                        }else{
-                            res.json(`Usuario logeado!`)
+                        }else{                            
+                            res.send({
+                                mensaje:("Usuario logeado!"),
+                                claveToken:token
+                            }) 
+                           
 
-                               /*  {mensaje:`Usuario ${user} logeado!`,
-                                tokenLogIn:token} */
-                            
                         }
                     })
                 }else{
@@ -186,8 +192,31 @@ const modificarDato = (req,res)=>{
             }
             }
         })
+
     }
 
 
 
-module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login,busquedaXnombre,buscarAdmin,borrarAdmin};
+    const verificacionUsuario=(req,res,next)=>{
+
+        const authToken=req.headers.authorization;
+        const token=authToken.split(" ").pop(); //debido a que al mostrar por consola el token se entrega con "bearer" al principio, se utiliza el split y el pop para quedarnos solo con la última parte (token)
+        //console.log(authToken);
+        
+         
+        jwt.verify(token,PASS_SEGURA,(error,data)=>{ //process.env.PASS_SEGURA
+            if(error){
+                if(error.name=="TokenExpiredError"){return res.json("Expiro el tiempo, por favor volver a logearse")}
+                /* res.send(error); */
+                else{res.json(error)}
+            }else{
+                
+                next();
+            }
+        })
+    
+    }
+
+
+
+module.exports={peces,agregarDatos,modificarDato,eliminarDato,registrarAdmin,login,busquedaXnombre,buscarAdmin,borrarAdmin,verificacionUsuario};

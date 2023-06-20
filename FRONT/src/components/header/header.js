@@ -56,17 +56,37 @@ export default function Header(){
 
         .then((res)=>res.json())
         .then((data)=>{setInfo(data);dato=data})
+
+          
+
+        console.log(dato.mensaje)
+       
         
-        if(dato === `Usuario logeado!`){
-            console.log("redireccionando!!")
-            window.location.href='../admin';
+        if(dato.mensaje === `Usuario logeado!`){
+            
+           window.location.href='../admin';  
+            
+            console.log(dato.claveToken);
+            localStorage.setItem("token",dato.claveToken)
+            console.log(localStorage.getItem("token"))
+
+
+
 
         }else{
             alert(dato)
         }
      } 
 
-    console.log(info);
+  
+
+
+
+
+    
+  
+
+   
     
     
     return(
