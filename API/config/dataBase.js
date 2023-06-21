@@ -5,6 +5,7 @@ const dataBaseInfo = { //esta info se obtiene en la pagina phpmyadmin
     host:process.env.HOST,
     user:process.env.DB_USER,
     database: process.env.DB,
+    password: process.env.PASS,
     
 };
 

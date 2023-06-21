@@ -6,6 +6,7 @@ import './paginaPeces.css';
 import Header from '../header/header'
 import Filter from "../filter/filter";
 
+
 export default function PaginaPeces(){
 
 
@@ -18,7 +19,14 @@ export default function PaginaPeces(){
     
     
     const traerPeces= async()=>{
+
+
+
         let peces= await fetch('http://localhost:3200/peces')
+    
+        
+       
+/*  ('http://localhost:3200/peces') */
         .then((res)=>res.json())
         .then(data=>{setArr(data);setResultado(data)})
         .catch(error => console.log("Se ha producido un error... " +error));
@@ -30,7 +38,7 @@ export default function PaginaPeces(){
 
         traerPeces();
        
-
+        console.log(resultado)
             
 
      },[])
