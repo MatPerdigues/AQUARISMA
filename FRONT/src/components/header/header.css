@@ -287,4 +287,66 @@ img {
     text-decoration: underline;
 }
 
+.link-galeria:link{
+    text-decoration: none;
+}
 
+@media only screen and (min-width:320px) and (max-width:480px){
+    #headerHome{
+       
+        position: absolute;
+        left: -210px;
+        top: 50px;
+        height: 200px;
+        font-size: 30px;
+        width: 1500px;
+        
+    }
+
+    #h1Header{
+        margin-top:0px;
+        font-size: 35px;
+    }
+
+    .pSecInferior{
+        font-size: 24px;
+      
+        width: 350px;
+        height: 100px;
+        position: absolute;
+        left: -100px;
+    }
+
+    .lineaSecInferior{
+        margin-top: 100px;
+    }
+
+    #pSecInferior3{
+        position: relative;
+        left: -20px;
+    }
+
+    #pSecInferior2{
+        position: relative;
+        left: -00px;
+    }
+
+    #img2{
+        position: relative;
+        left: 40px;
+    }
+    
+    #btn-login{
+        
+       position: absolute;
+        left: -200px;
+    }
+    
+    #form-login{
+        position: relative;
+        top: 100px;
+        height: 550px;
+    }
+
+
+}

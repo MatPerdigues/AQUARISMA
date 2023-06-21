@@ -7,6 +7,7 @@ import Header from '../header/header';
 
 
 
+
 export default function Home (){
 
     return (
@@ -16,6 +17,9 @@ export default function Home (){
             <Header id="header-home"/>
         </div>
         <div id='div-home2'>
+           <div id='img-divHome2'>
+            
+           </div>
 
         </div>
         

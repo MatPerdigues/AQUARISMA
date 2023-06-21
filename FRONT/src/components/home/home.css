@@ -1,7 +1,13 @@
 #div-home2{
    
     height: 800px;
+    
+}
+
+#img-divHome2{
     background-image:url("./backHome2.jpg");
+    height: 800px;
+    width: 1800px;
 }
 
 #header-home{
@@ -10,4 +16,18 @@
     top:100px;
 }
 
+@media only screen and (min-width:320px) and (max-width:480px){
+    #div-home2{
+       
+        width:800px;
+        position: absolute;
+        left: 300px;
+        top: 700px
+    }
+
+    #img-divHome2{
+        position: absolute;
+        left: -500px;
+    }
+}
 

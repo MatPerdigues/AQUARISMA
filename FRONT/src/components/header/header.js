@@ -18,6 +18,7 @@ import { useState } from 'react';
 
 
 
+
 export default function Header(){
 
     let dato = "";
@@ -79,16 +80,6 @@ export default function Header(){
      } 
 
   
-
-
-
-
-    
-  
-
-   
-    
-    
     return(
         <Fragment>
 
@@ -128,11 +119,7 @@ export default function Header(){
                                             <button type='button' onClick={ocultar} id='btn-submit1'><FontAwesomeIcon icon={faXmark} /></button>
                                             <button type="submit" id='btn-submit'><FontAwesomeIcon icon={faCheck}/></button>
                                         </div>
-                                        <div id='div-p-login'>
-                                            <p id='p-login1'>Testing</p>
-                                            <p>Usuario: Admin123</p>
-                                            <p>Contraseña: Admin123</p>
-                                        </div>
+                                        
                                     </section>
                             </form>
                             
@@ -156,25 +143,25 @@ export default function Header(){
                                     
                                     <Link to="/peces"><div>
                                         <div class="imgSecInferior">
-                                            <img src={img2} alt='img_escalar'></img>
+                                            <img src={img2} alt='img_escalar' id='img2'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior2"> Conocé a los protagonistas de este ecosistema </p>
                                     </div></Link>
 
 
-                                    <div>
-                                        <div class="imgSecInferior">
+                                     <Link to="/galeriaAmazonicos" class="link-galeria"><div>
+                                       <div class="imgSecInferior">
                                             <img src={img3} alt='img_amazonico'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior3">Sumergite en nuestros acuarios</p>
-                                    </div>
+                                    </div></Link>
                                     
            
                                 </section>
 
                                 <section class='lineaSecInferior'>
                                     <div></div>
-                                    <p class="pLineaInferior">Acerca de AQUARISMA</p>
+                                    <Link to="/infoAquarisma"><p class="pLineaInferior">Acerca de AQUARISMA</p></Link>
                                 </section>
  
                             </div>
@@ -201,23 +188,23 @@ export default function Header(){
                                     
                                     <Link to="/peces"><div>
                                     <div class="imgSecInferior">
-                                            <img src={img5} alt='img_pez_angel'></img>
+                                            <img src={img5} alt='img_pez_angel' id='img2'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior2"> Conocé a los protagonistas de este ecosistema </p>
                                     </div></Link>
-                                    <div>
+                                    <Link to="/galeriaMarinos" class="link-galeria"><div>
                                         <div class="imgSecInferior">
                                             <img src={img6} alt='img_acurario_marino'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior3">Sumergite en nuestros acuarios</p>
-                                    </div>
+                                    </div></Link>
                                     
            
                                 </section>
 
                                 <section class='lineaSecInferior'>
                                     <div></div>
-                                    <p class="pLineaInferior">Acerca de AQUARISMA</p>
+                                    <Link to="/infoAquarisma"><p class="pLineaInferior">Acerca de AQUARISMA</p></Link>
                                 </section> 
                             </div>
                         </div>
@@ -240,23 +227,24 @@ export default function Header(){
                                     
                                     <Link to="/peces"><div>
                                         <div class="imgSecInferior">
-                                            <img src={img8} alt='img_betta'></img>
+                                            <img src={img8} alt='img_betta' id='img2'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior2"> Conocé a los protagonistas de este ecosistema </p>
                                     </div></Link>
-                                    <div>
+
+                                    <Link to="/galeriaAguaDulce" class="link-galeria"><div>
                                         <div class="imgSecInferior">
                                             <img src={img9} alt='img_acuario_dulce'></img>
                                         </div>
                                         <p class="pSecInferior" id="pSecInferior3">Sumergite en nuestros acuarios</p>
-                                    </div>
+                                    </div></Link>
                                     
            
                                 </section>
 
                                 <section class='lineaSecInferior'>
                                     <div></div>
-                                    <p class="pLineaInferior">Acerca de AQUARISMA</p>
+                                    <Link to="/infoAquarisma"><p class="pLineaInferior">Acerca de AQUARISMA</p></Link>
                                 </section> 
                             </div>
                         </div>
